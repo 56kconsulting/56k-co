@@ -36,7 +36,19 @@ class App extends Component {
             </Col>
           </Row>
         </Section>
-        <Section sectionName="Follow" />
+        <Section sectionName="Follow">
+          <Row>
+            <Col xs={12} md={4}>
+              {listgroupInstance}
+            </Col>
+            <Col xs={12} md={4}>
+              {listgroupInstance}
+            </Col>
+            <Col xs={12} md={4}>
+              {listgroupInstance}
+            </Col>
+          </Row>
+        </Section>
 
         <Footer copyright="&copy;2017 56 K Consulting, LLC" />
       </div>
