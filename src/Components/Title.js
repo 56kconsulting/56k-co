@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Col } from 'react-bootstrap';
 
 const Title = props => {
@@ -12,7 +14,7 @@ const Title = props => {
 };
 
 Title.propTypes = {
-  name: React.PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Title;

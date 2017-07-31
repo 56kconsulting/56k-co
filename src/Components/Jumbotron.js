@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Grid, Row, Col } from 'react-bootstrap';
 
 const Jumbotron = props => {
@@ -18,7 +20,7 @@ const Jumbotron = props => {
 };
 
 Jumbotron.propTypes = {
-  greeting: React.PropTypes.string.isRequired,
+  greeting: PropTypes.string.isRequired,
 };
 
 export default Jumbotron;

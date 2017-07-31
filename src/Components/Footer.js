@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Grid, Row, Col } from 'react-bootstrap';
 
 const Footer = props => {
@@ -18,7 +20,7 @@ const Footer = props => {
 };
 
 Footer.propTypes = {
-  copyright: React.PropTypes.string.isRequired,
+  copyright: PropTypes.string.isRequired,
 };
 
 export default Footer;
