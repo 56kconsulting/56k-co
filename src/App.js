@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Glyphicon, Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
-import logo from './logo.svg';
 import './App.css';
 
 import accordionInstance from './Components/Accordion';
-import navInstance from './Components/Navigation';
 import Jumbotron from './Components/Jumbotron';
 import listgroupInstance from './Components/ListGroup';
 import Section from './Components/Section';
