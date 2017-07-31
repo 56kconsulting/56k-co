@@ -1,11 +1,24 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
-const jumbotronInstance = (
-  <Jumbotron>
-    <h1>Hi!!!</h1>
-    <p>Blah Blah Blah</p>
-  </Jumbotron>
-);
+const Jumbotron = props => {
+  return (
+    <div className="page-title">
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <h1>
+              {props.greeting}
+            </h1>
+          </Col>
+        </Row>
+      </Grid>
+    </div>
+  );
+};
 
-export default jumbotronInstance;
+Jumbotron.propTypes = {
+  greeting: React.PropTypes.string.isRequired,
+};
+
+export default Jumbotron;

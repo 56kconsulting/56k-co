@@ -3,7 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 const Footer = props => {
   return (
-    <div className="App-footer">
+    <div className="page-footer">
       <Grid>
         <Row>
           <Col xs={12}>
