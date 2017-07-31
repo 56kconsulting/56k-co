@@ -1,48 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Grid, Row, Col, Glyphicon } from 'react-bootstrap';
+import { Glyphicon, Grid, Row, Col } from 'react-bootstrap';
 
 import logo from './logo.svg';
 import './App.css';
+
 import accordionInstance from './Components/Accordion';
 import navInstance from './Components/Navigation';
 import jumbotronInstance from './Components/Jumbotron';
 import listgroupInstance from './Components/ListGroup';
-
-const aboutMe = (
-  <Row>
-    <Col xs={12}>
-      <h2>Who I am</h2>
-    </Col>
-    <Col xs={12} md={6} />
-    <Col xs={12} md={6} />
-  </Row>
-);
-
-const skilledServices = (
-  <Row>
-    <Col xs={12}>
-      <h2>What I do</h2>
-    </Col>
-    <Col xs={12} md={4}>
-      {listgroupInstance}
-    </Col>
-    <Col xs={12} md={8}>
-      {accordionInstance}
-    </Col>
-  </Row>
-);
-
-const followMe = (
-  <Row>
-    <Col xs={12}>
-      <h2>Follow Me</h2>
-    </Col>
-    <Col xs={4}>Twitter</Col>
-    <Col xs={4}>Medium</Col>
-    <Col xs={4}>Github</Col>
-  </Row>
-);
+import Section from './Components/Section';
+import Footer from './Components/Footer';
 
 class App extends Component {
   render() {
@@ -50,19 +18,27 @@ class App extends Component {
       <div className="App">
         {jumbotronInstance}
         <Grid>
-          <p className="App-intro">This is Aaron's Website!</p>
-          <Button bsStyle="success" bsSize="small">
-            Something
-          </Button>
-          {aboutMe}
-          {skilledServices}
-          {followMe}
+          <p className="App-intro">This is a Website!</p>
         </Grid>
-        <div className="App-footer">
-          <Grid>
-            <p>&copy;2017 56k Consulting, LLC</p>
-          </Grid>
-        </div>
+        <Section sectionName="About">
+          <Row>
+            <Col xs={12} md={6} />
+            <Col xs={12} md={6} />
+          </Row>
+        </Section>
+        <Section sectionName="Skills and Services">
+          <Row>
+            <Col xs={12} md={4}>
+              {listgroupInstance}
+            </Col>
+            <Col xs={12} md={8}>
+              {accordionInstance}
+            </Col>
+          </Row>
+        </Section>
+        <Section sectionName="Follow" />
+
+        <Footer copyright="&copy;2017 56 K Consulting, LLC" />
       </div>
     );
   }

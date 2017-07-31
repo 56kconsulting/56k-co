@@ -3,7 +3,7 @@ import { Jumbotron } from 'react-bootstrap';
 
 const jumbotronInstance = (
   <Jumbotron>
-    <h1>Hi, I'm Aaron.</h1>
+    <h1>Hi!!!</h1>
     <p>Blah Blah Blah</p>
   </Jumbotron>
 );
