@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Jumbotron greeting="Welcome!" />
+        <Jumbotron greeting="About!" />
 
         <Section sectionName="Section Two">
           <Grid>
@@ -23,24 +23,6 @@ class App extends Component {
               </Col>
               <Col xs={12} md={8}>
                 <p>Things</p>
-              </Col>
-            </Row>
-          </Grid>
-        </Section>
-        <Section sectionName="Section Three">
-          <Grid>
-            <Row>
-              <Col xs={3} md={2} mdOffset={2}>
-                Twitter
-              </Col>
-              <Col xs={3} md={2}>
-                Facebook
-              </Col>
-              <Col xs={3} md={2}>
-                Medium
-              </Col>
-              <Col xs={3} md={2}>
-                LinkedIn
               </Col>
             </Row>
           </Grid>
