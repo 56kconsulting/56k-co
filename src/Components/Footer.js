@@ -8,6 +8,9 @@ const Footer = styled.footer`padding: 20px;`;
 export default class Container extends React.Component {
   static propTypes = {
     copyright: PropTypes.string.isRequired,
+    twitterLink: PropTypes.string,
+    linkedinLink: PropTypes.string,
+    mediumLink: PropTypes.string,
   };
   render() {
     const { copyright } = this.props;
@@ -16,24 +19,19 @@ export default class Container extends React.Component {
         <Footer>
           <Grid>
             <Row>
-              <Col xs={3} md={2} mdOffset={2}>
-                Twitter
-              </Col>
-              <Col xs={3} md={2}>
-                Facebook
-              </Col>
-              <Col xs={3} md={2}>
-                Medium
-              </Col>
-              <Col xs={3} md={2}>
-                LinkedIn
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12}>
+              <Col xs={12} md={6}>
                 <p>
                   {copyright}
                 </p>
+              </Col>
+              <Col xs={4} md={2}>
+                Twitter
+              </Col>
+              <Col xs={4} md={2}>
+                Medium
+              </Col>
+              <Col xs={4} md={2}>
+                LinkedIn
               </Col>
             </Row>
           </Grid>

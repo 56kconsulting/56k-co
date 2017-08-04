@@ -3,15 +3,20 @@ import PropTypes from 'prop-types';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
-const Jumbotron = props => {
+import navInstance from './Navigation';
+
+const Header = props => {
   return (
     <div className="page-title">
       <Grid>
         <Row>
-          <Col xs={12}>
+          <Col xs={12} md={6}>
             <h1>
               {props.greeting}
             </h1>
+          </Col>
+          <Col xs={12} md={6}>
+            {navInstance}
           </Col>
         </Row>
       </Grid>
@@ -19,8 +24,8 @@ const Jumbotron = props => {
   );
 };
 
-Jumbotron.propTypes = {
+Header.propTypes = {
   greeting: PropTypes.string.isRequired,
 };
 
-export default Jumbotron;
+export default Header;

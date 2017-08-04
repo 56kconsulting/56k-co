@@ -1,25 +1,16 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
 
 import './App.css';
 
 import Header from './Components/Header';
-import Section from './Components/Section';
 import Footer from './Components/Footer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header greeting="Home!" />
-        <Section sectionName="Section One">
-          <Grid>
-            <Row>
-              <Col xs={12} md={6} />
-              <Col xs={12} md={6} />
-            </Row>
-          </Grid>
-        </Section>
+        <Header greeting="Not Found!" />
+
         <Footer copyright="&copy;2017 56 K Consulting, LLC" />
       </div>
     );

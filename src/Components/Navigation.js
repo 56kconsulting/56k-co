@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, Navbar } from 'react-bootstrap';
+import { Nav, NavItem } from 'react-bootstrap';
 
 const navInstance = (
-  <Nav bsStyle="pills" activeKey={1}>
-    <NavItem eventKey={1} href="/home">
-      NavItem 1 content
+  <Nav activeKey={1}>
+    <NavItem eventKey={1} href="/">
+      Home
     </NavItem>
-    <NavItem eventKey={2} href="/home">
-      NavItem 2 content
+    <NavItem eventKey={2} href="/about">
+      About
     </NavItem>
-    <NavItem eventKey={3} href="/home">
-      NavItem 3 content
+    <NavItem eventKey={3} href="/services">
+      Services
     </NavItem>
   </Nav>
 );
