@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header greeting="Home!" />
-        <Section sectionName="Section One">
+        <Section sectionName="Home Page">
           <Grid>
             <Row>
               <Col xs={12} md={6} />
@@ -20,7 +20,7 @@ class App extends Component {
             </Row>
           </Grid>
         </Section>
-        <Footer copyright="&copy;2017 56 K Consulting, LLC" />
+        <Footer />
       </div>
     );
   }
