@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import navInstance from './Navigation';
+import Navigation from './Navigation';
 
 const Header = styled.header.attrs({})`
   background-color: #123;
@@ -22,7 +22,7 @@ const HeaderContainer = props => {
               </h1>
             </Col>
             <Col xs={12} md={6}>
-              {navInstance}
+              {Navigation}
             </Col>
           </Row>
         </Grid>

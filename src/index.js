@@ -14,7 +14,7 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
-      <Route path="*" component={FourOFour} />
+      <Route path="/*" component={FourOFour} />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root'),

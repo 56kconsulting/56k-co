@@ -16,3 +16,7 @@
   background-color:#ddd;
   padding: 20px;
 }
+
+.active {
+  background-color: #0099FF;
+}

@@ -1,18 +1,18 @@
 import React from 'react';
-import { Nav, NavItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const navInstance = (
-  <Nav activeKey={1}>
-    <NavItem eventKey={1} href="/">
-      Home
-    </NavItem>
-    <NavItem eventKey={2} href="/about">
-      About
-    </NavItem>
-    <NavItem eventKey={3} href="/services">
-      Services
-    </NavItem>
-  </Nav>
+const Navigation = (
+  <ul>
+    <li>
+      <Link to="/">Home</Link>
+    </li>
+    <li>
+      <Link to="/about">About</Link>
+    </li>
+    <li>
+      <Link to="/">Services</Link>
+    </li>
+  </ul>
 );
 
-export default navInstance;
+export default Navigation;

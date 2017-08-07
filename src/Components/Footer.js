@@ -18,12 +18,20 @@ export default class Container extends React.Component {
           <Grid>
             <Row>
               <Col xs={2} xsOffset={1}>
-                <a href="https://twitter.com/Abrongersma" target="_blank">
+                <a
+                  href="https://twitter.com/Abrongersma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaTwitter />
                 </a>
               </Col>
               <Col xs={2}>
-                <a href="https://medium.com/@abrongersma" target="_blank">
+                <a
+                  href="https://medium.com/@abrongersma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaMedium />
                 </a>
               </Col>
@@ -31,12 +39,17 @@ export default class Container extends React.Component {
                 <a
                   href="https://www.linkedin.com/in/abrongersma/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FaLinkedin />
                 </a>
               </Col>
               <Col xs={2}>
-                <a href="https://twitter.com/Abrongersma" target="_blank">
+                <a
+                  href="https://twitter.com/Abrongersma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaGithub />
                 </a>
               </Col>
