@@ -19,12 +19,14 @@ const HeaderContainer = props => {
     <Header>
       <Grid>
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12}>
             <h1>
               {props.greeting}
             </h1>
           </Col>
-          <Col xs={12} md={6}>
+        </Row>
+        <Row>
+          <Col xs={12}>
             <Navigation />
           </Col>
         </Row>

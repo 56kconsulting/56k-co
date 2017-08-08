@@ -7,14 +7,8 @@ import '../App.css';
 
 const Navi = styled.div`
   & {
-    @media (max-width: 768px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     align-content: flex-end;
     a:link {
