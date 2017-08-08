@@ -4,11 +4,14 @@ import styled from 'styled-components';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import Navi from './Navigation';
+import Navigation from './Navigation';
 
-const Header = styled.header.attrs({})`
-  background-color:#ddd;
+const Header = styled.header`
+  background-color: #ddd;
   padding: 20px;
+  & > .container > .row > .col-md-6 {
+    height: 100%;
+  }
 `;
 
 const HeaderContainer = props => {
@@ -22,7 +25,7 @@ const HeaderContainer = props => {
             </h1>
           </Col>
           <Col xs={12} md={6}>
-            <Navi />
+            <Navigation />
           </Col>
         </Row>
       </Grid>
