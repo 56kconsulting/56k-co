@@ -12,11 +12,6 @@
   to { transform: rotate(360deg); }
 }
 
-.page-title {
-  background-color:#ddd;
-  padding: 20px;
-}
-
 .active {
   background-color: #0099FF;
 }

@@ -1,18 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Navigation = (
-  <ul>
-    <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/about">About</Link>
-    </li>
-    <li>
-      <Link to="/">Services</Link>
-    </li>
-  </ul>
-);
+import '../App.css';
 
-export default Navigation;
+const Navi = () =>
+  <div>
+    <NavLink to="/">Home</NavLink>
+    <NavLink to="/about">About</NavLink>
+    <NavLink to="/">Services</NavLink>
+  </div>;
+
+export default Navi;

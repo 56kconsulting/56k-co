@@ -4,29 +4,28 @@ import styled from 'styled-components';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import Navigation from './Navigation';
+import Navi from './Navigation';
 
 const Header = styled.header.attrs({})`
-  background-color: #123;
+  background-color:#ddd;
+  padding: 20px;
 `;
 
 const HeaderContainer = props => {
   return (
     <Header>
-      <div className="page-title">
-        <Grid>
-          <Row>
-            <Col xs={12} md={6}>
-              <h1>
-                {props.greeting}
-              </h1>
-            </Col>
-            <Col xs={12} md={6}>
-              {Navigation}
-            </Col>
-          </Row>
-        </Grid>
-      </div>
+      <Grid>
+        <Row>
+          <Col xs={12} md={6}>
+            <h1>
+              {props.greeting}
+            </h1>
+          </Col>
+          <Col xs={12} md={6}>
+            <Navi />
+          </Col>
+        </Row>
+      </Grid>
     </Header>
   );
 };

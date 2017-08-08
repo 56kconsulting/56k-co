@@ -7,7 +7,7 @@ import Header from './Components/Header';
 import Section from './Components/Section';
 import Footer from './Components/Footer';
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
       <div className="App">
@@ -26,4 +26,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
