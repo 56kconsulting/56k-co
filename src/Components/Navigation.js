@@ -5,9 +5,11 @@ import '../App.css';
 
 const Navi = () =>
   <div>
-    <NavLink to="/">Home</NavLink>
+    <NavLink exact to="/">
+      Home
+    </NavLink>
     <NavLink to="/about">About</NavLink>
-    <NavLink to="/">Services</NavLink>
+    <NavLink to="/services">Services</NavLink>
   </div>;
 
 export default Navi;
