@@ -1,33 +1,40 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export class Tooltip extends React.PureComponent {
+  static propTypes = {
+    handleChange: PropTypes.func,
+    defaultShow: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    handleChange: null,
+    defaultShow: false,
+  };
+
   constructor(props) {
     super(props);
-    this.state = { tooltipActive: false };
+    this.state = { tooltipActive: props.defaultShow };
   }
 
-  render() {
-    var self = this;
-    var nodes = _.map(this.props.children, function(child) {
-      child.props.tooltipActive = self.state.tooltipActive;
-      child.props.handleChange = self._handleChange;
-      if (self.isMounted()) {
-        child.props.position = self.getDOMNode().getBoundingClientRect();
-      }
-      return child;
+  handleChange = e => {
+    if (this.props.handleChange) {
+      this.props.handleChange(e.target.tooltipActive);
+    }
+    this.setState({
+      tooltipActive: e.target.tooltipActive,
     });
+  };
+
+  render() {
+    const { children } = this.props;
+
     return (
       <div className="Tooltip">
-        {nodes}
+        {children}
       </div>
     );
   }
-
-  _handleChange = active => {
-    this.setState({
-      tooltipActive: active,
-    });
-  };
 }
 
 export class Contents extends React.PureComponent {
@@ -53,15 +60,15 @@ export class Contents extends React.PureComponent {
 export class HoverTrigger extends React.PureComponent {
   render() {
     return (
-      <div onMouseEnter={this._onMouseEnter} onMouseLeave={this._onMouseLeave}>
+      <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
         {this.props.children}
       </div>
     );
   }
-  _onMouseEnter = () => {
+  onMouseEnter = () => {
     this.props.handleChange(true);
   };
-  _onMouseLeave = () => {
+  onMouseLeave = () => {
     this.props.handleChange(false);
   };
 }
