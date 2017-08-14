@@ -1,84 +1,134 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import PropTypes from 'prop-types';
 
-export class Tooltip extends React.PureComponent {
+export default class Tooltip extends React.Component {
   static propTypes = {
-    handleChange: PropTypes.func,
-    defaultShow: PropTypes.bool,
+    children: PropTypes.any.isRequired,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    styles: PropTypes.object,
   };
 
-  static defaultProps = {
-    handleChange: null,
-    defaultShow: false,
+  styles = {
+    wrapper: {
+      position: 'relative',
+      display: 'inline-block',
+      zIndex: '98',
+      color: '#555',
+      cursor: 'help',
+    },
+    tooltip: {
+      position: 'absolute',
+      zIndex: '99',
+      minWidth: '200px',
+      maxWidth: '420px',
+      background: '#000',
+      bottom: '100%',
+      left: '50%',
+      marginBottom: '10px',
+      padding: '5px',
+      WebkitTransform: 'translateX(-50%)',
+      msTransform: 'translateX(-50%)',
+      OTransform: 'translateX(-50%)',
+      transform: 'translateX(-50%)',
+    },
+    content: {
+      background: '#000',
+      color: '#fff',
+      display: 'inline',
+      fontSize: '.8em',
+      padding: '.3em 1em',
+    },
+    arrow: {
+      position: 'absolute',
+      width: '0',
+      height: '0',
+      bottom: '-5px',
+      left: '50%',
+      marginLeft: '-5px',
+      borderLeft: 'solid transparent 5px',
+      borderRight: 'solid transparent 5px',
+      borderTop: 'solid #000 5px',
+    },
+    gap: {
+      position: 'absolute',
+      width: '100%',
+      height: '20px',
+      bottom: '-20px',
+    },
   };
 
   constructor(props) {
     super(props);
-    this.state = { tooltipActive: props.defaultShow };
+    this.state = {
+      visible: false,
+    };
+    if (props.styles) this.mergeStyles(props.styles);
   }
 
+  mergeStyles = userStyles => {
+    Object.keys(this.styles).forEach(name => {
+      Object.assign(this.styles[name], userStyles[name]);
+    });
+  };
+
+  show = () => this.setVisibility(true);
+
+  hide = () => this.setVisibility(false);
+
+  setVisibility = visible => {
+    this.setState(
+      Object.assign({}, this.state, {
+        visible,
+      }),
+    );
+  };
+
+  handleTouch = () => {
+    this.show();
+    this.assignOutsideTouchHandler();
+  };
+
+  assignOutsideTouchHandler = () => {
+    const handler = e => {
+      let currentNode = e.target;
+      const componentNode = ReactDOM.findDOMNode(this.refs.instance);
+      while (currentNode.parentNode) {
+        if (currentNode === componentNode) return;
+        currentNode = currentNode.parentNode;
+      }
+      if (currentNode !== document) return;
+      this.hide();
+      document.removeEventListener('touchstart', handler);
+    };
+    document.addEventListener('touchstart', handler);
+  };
+
   render() {
-    const { children } = this.props;
+    const { props, state, styles, show, hide, handleTouch } = this;
     return (
-      <div className="Tooltip">
-        {children}
+      <div
+        onMouseEnter={show}
+        onMouseLeave={hide}
+        onTouchStart={handleTouch}
+        ref="wrapper"
+        style={styles.wrapper}
+      >
+        {props.children}
+        {state.visible &&
+          <div ref="tooltip" style={styles.tooltip}>
+            <div ref="content" style={styles.content}>
+              {props.content}
+            </div>
+            <div ref="arrow" style={styles.arrow}>
+              {' '}
+            </div>
+            <div ref="gap" style={styles.gap}>
+              {' '}
+            </div>
+          </div>}
       </div>
     );
   }
-}
-
-export class Contents extends React.PureComponent {
-  render() {
-    var active = this.props.tooltipActive;
-    var position = this.props.position || null;
-    if (active && position) {
-      var style = {
-        left: position.left - 10,
-        top: position.bottom + 18,
-      };
-      return (
-        <div style={style} className="Tooltip-content bottom">
-          {this.props.children}
-        </div>
-      );
-    } else {
-      return null;
-    }
-  }
-}
-
-export class HoverTrigger extends React.PureComponent {
-  static propTypes = {
-    handleChange: PropTypes.func,
-    defaultShow: PropTypes.bool,
-  };
-
-  static defaultProps = {
-    handleChange: null,
-    defaultShow: false,
-  };
-  constructor(props) {
-    super(props);
-    this.state = { tooltipActive: props.defaultShow };
-  }
-  handleChange = e => {
-    if (this.props.handleChange) {
-      this.props.handleChange(e.target.tooltipActive);
-    }
-  };
-  render() {
-    return (
-      <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-        {this.props.children}
-      </div>
-    );
-  }
-  onMouseEnter = () => {
-    this.handleChange(true);
-    console.log('Enter');
-  };
-  onMouseLeave = () => {
-    this.handleChange(false);
-    console.log('Leave');
-  };
 }

@@ -6,7 +6,7 @@ import './App.css';
 import Header from './Components/Header';
 import Section from './Components/Section';
 import Footer from './Components/Footer';
-import { Tooltip, HoverTrigger, Contents } from './Components/Tooltip.js';
+import Tooltip from './Components/Tooltip.js';
 
 class Home extends Component {
   render() {
@@ -17,16 +17,8 @@ class Home extends Component {
           <Grid>
             <Row>
               <Col xs={12} md={6}>
-                <Tooltip>
-                  <HoverTrigger>
-                    <div className="help-tip">?</div>
-                  </HoverTrigger>
-                  <Contents>
-                    <div>
-                      <h1>This is the tooltip!</h1>
-                      <p>Tooltip body is a bit longer than title</p>
-                    </div>
-                  </Contents>
+                <Tooltip content="Test content">
+                  <span>Something</span>
                 </Tooltip>
               </Col>
               <Col xs={12} md={6} />
