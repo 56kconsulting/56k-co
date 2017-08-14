@@ -19,7 +19,7 @@ const Footer = styled.footer`
       background-color: #ddd;
 
       & > .container > .row > .col-xs-12 > p {
-        padding-top: 10px;
+        padding: 10px;
       }
     }
   }

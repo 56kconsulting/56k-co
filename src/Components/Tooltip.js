@@ -17,18 +17,8 @@ export class Tooltip extends React.PureComponent {
     this.state = { tooltipActive: props.defaultShow };
   }
 
-  handleChange = e => {
-    if (this.props.handleChange) {
-      this.props.handleChange(e.target.tooltipActive);
-    }
-    this.setState({
-      tooltipActive: e.target.tooltipActive,
-    });
-  };
-
   render() {
     const { children } = this.props;
-
     return (
       <div className="Tooltip">
         {children}
@@ -58,6 +48,24 @@ export class Contents extends React.PureComponent {
 }
 
 export class HoverTrigger extends React.PureComponent {
+  static propTypes = {
+    handleChange: PropTypes.func,
+    defaultShow: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    handleChange: null,
+    defaultShow: false,
+  };
+  constructor(props) {
+    super(props);
+    this.state = { tooltipActive: props.defaultShow };
+  }
+  handleChange = e => {
+    if (this.props.handleChange) {
+      this.props.handleChange(e.target.tooltipActive);
+    }
+  };
   render() {
     return (
       <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
@@ -66,9 +74,11 @@ export class HoverTrigger extends React.PureComponent {
     );
   }
   onMouseEnter = () => {
-    this.props.handleChange(true);
+    this.handleChange(true);
+    console.log('Enter');
   };
   onMouseLeave = () => {
-    this.props.handleChange(false);
+    this.handleChange(false);
+    console.log('Leave');
   };
 }
