@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import PropTypes from 'prop-types';
 
-export default class Tooltip extends React.Component {
+export class Tooltip extends React.Component {
   static propTypes = {
     children: PropTypes.any.isRequired,
-    content: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     styles: PropTypes.object,
   };
 
@@ -23,8 +21,9 @@ export default class Tooltip extends React.Component {
       zIndex: '99',
       minWidth: '200px',
       maxWidth: '420px',
-      background: '#000',
-      bottom: '100%',
+      background: '#616161',
+      color: '#fff',
+      top: '125%',
       left: '50%',
       marginBottom: '10px',
       padding: '5px',
@@ -33,23 +32,16 @@ export default class Tooltip extends React.Component {
       OTransform: 'translateX(-50%)',
       transform: 'translateX(-50%)',
     },
-    content: {
-      background: '#000',
-      color: '#fff',
-      display: 'inline',
-      fontSize: '.8em',
-      padding: '.3em 1em',
-    },
     arrow: {
       position: 'absolute',
       width: '0',
       height: '0',
-      bottom: '-5px',
+      top: '-5px',
       left: '50%',
       marginLeft: '-5px',
       borderLeft: 'solid transparent 5px',
       borderRight: 'solid transparent 5px',
-      borderTop: 'solid #000 5px',
+      borderBottom: 'solid #616161 5px',
     },
     gap: {
       position: 'absolute',
@@ -61,9 +53,7 @@ export default class Tooltip extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      visible: false,
-    };
+    this.state = { visible: false };
     if (props.styles) this.mergeStyles(props.styles);
   }
 
@@ -74,7 +64,6 @@ export default class Tooltip extends React.Component {
   };
 
   show = () => this.setVisibility(true);
-
   hide = () => this.setVisibility(false);
 
   setVisibility = visible => {
@@ -107,6 +96,7 @@ export default class Tooltip extends React.Component {
 
   render() {
     const { props, state, styles, show, hide, handleTouch } = this;
+
     return (
       <div
         onMouseEnter={show}
@@ -115,11 +105,11 @@ export default class Tooltip extends React.Component {
         ref="wrapper"
         style={styles.wrapper}
       >
-        {props.children}
+        {props.triggerText}
         {state.visible &&
           <div ref="tooltip" style={styles.tooltip}>
-            <div ref="content" style={styles.content}>
-              {props.content}
+            <div className="Tooltip-content">
+              {this.props.children}
             </div>
             <div ref="arrow" style={styles.arrow}>
               {' '}
