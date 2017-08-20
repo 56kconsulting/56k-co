@@ -23,7 +23,7 @@ class Home extends Component {
                 This is some &nbsp;
                 <Tooltip triggerText=" Test content ">
                   <div>
-                    <h1 style={{ 'font-family': 'serif' }}>HI!</h1>
+                    <h1 style={{ fontFamily: 'serif' }}>HI!</h1>
                     <p>
                       <a href="google.com" target="_blank">
                         Tooltip
