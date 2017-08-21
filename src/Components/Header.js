@@ -5,9 +5,14 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 import Navigation from './Navigation';
+import AaronBrongersma from '../assets/AaronBrongersma.jpg';
 
 const Header = styled.header`
+  background-image: url(${AaronBrongersma});
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #ddd;
+  height: 200px;
   padding: 20px;
   & > .container > .row > .col-md-6 {
     height: 100%;
