@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 
 export default class Tooltip extends React.PureComponent {
   static propTypes = {
@@ -67,13 +66,19 @@ export default class Tooltip extends React.PureComponent {
     this.state = { visible: false };
     if (props.styles) this.mergeStyles(props.styles);
   }
+
   mergeStyles = userStyles => {
     Object.keys(this.styles).forEach(name => {
       Object.assign(this.styles[name], userStyles[name]);
     });
   };
+
   show = () => this.setVisibility(true);
-  hide = () => this.setVisibility(false);
+  hide = () => {
+    setTimeout(() => {
+      this.setVisibility(false);
+    }, 1000);
+  };
 
   setVisibility = visible => {
     this.setState(
@@ -83,34 +88,13 @@ export default class Tooltip extends React.PureComponent {
     );
   };
 
-  handleTouch = () => {
-    this.show();
-    this.assignOutsideTouchHandler();
-  };
-
-  assignOutsideTouchHandler = () => {
-    const handler = e => {
-      let currentNode = e.target;
-      const componentNode = ReactDOM.findDOMNode(this.refs.instance);
-      while (currentNode.parentNode) {
-        if (currentNode === componentNode) return;
-        currentNode = currentNode.parentNode;
-      }
-      if (currentNode !== document) return;
-      this.hide();
-      document.removeEventListener('touchstart', handler);
-    };
-    document.addEventListener('touchstart', handler);
-  };
-
   render() {
-    const { props, state, styles, show, hide, handleTouch } = this;
+    const { props, state, styles, show, hide } = this;
 
     return (
       <div
         onMouseEnter={show}
         onMouseLeave={hide}
-        onTouchStart={handleTouch}
         ref="wrapper"
         style={styles.wrapper}
       >
