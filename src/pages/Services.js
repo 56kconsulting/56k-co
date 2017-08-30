@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import './App.css';
-
-import Header from './Components/Header';
-import Section from './Components/Section';
-import Footer from './Components/Footer';
+import Header from '../Components/Header';
+import Section from '../Components/Section';
+import Footer from '../Components/Footer';
 
 class Services extends Component {
   render() {

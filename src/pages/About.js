@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { ListGroup, ListGroupItem, Grid, Row, Col } from 'react-bootstrap';
 
-import './App.css';
-
-import Header from './Components/Header';
-import Section from './Components/Section';
-import Footer from './Components/Footer';
+import Header from '../Components/Header';
+import Section from '../Components/Section';
+import Footer from '../Components/Footer';
 
 class App extends Component {
   render() {
