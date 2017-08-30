@@ -18,7 +18,7 @@ export default class Pages extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/services" component={Services} />
-            <Route exact path="/congrats" component={NotFound} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </div>
       <Footer />

@@ -7,16 +7,15 @@ import Tooltip from '../Components/Tooltip.js';
 class Home extends Component {
   render() {
     return (
-        <Page pageName="Home">
-          <Grid>
-            <Row>
-              <Col xs={12} md={6}>
-                hi
-              </Col>
-
-            </Row>
-          </Grid>
-        </Page>
+      <Page pageName="Home">
+        <Grid>
+          <Row>
+            <Col xs={12} md={6}>
+              hi
+            </Col>
+          </Row>
+        </Grid>
+      </Page>
     );
   }
 }
