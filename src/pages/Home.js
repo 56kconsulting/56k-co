@@ -7,14 +7,19 @@ import Tooltip from '../Components/Tooltip.js';
 class Home extends Component {
   render() {
     return (
-      <Page pageName="Home">
+      <Page pageName="">
         <Grid>
           <Row>
-            <Col xs={12} md={6}>
-              One part engineering manager, one part public speaker, one part product manager, two parts sys admin.
-            </Col>
-            <Col xs={12} md={6}>
-              One part engineering manager, one part public speaker, one part product manager, two parts sys admin.
+            <Col xs={12}>
+              <p>I enjoy building and scaling highly available web services and platforms.</p>
+
+              <p>As companies build new applications the focus is often on getting to market quickly, as the demand for a new application grows the need to scale is critical. Optimizing and re-architecting makes scaling possible. This is where I come in.</p>
+
+              <p>I started solving complex computer system issues back in high school. Clear Channel hired me when I was only 19 to lead the engineering effort behind migrating a critical business application from SCO Unix to Redhat Enterprise Linux. For most people this kind of legacy system migration would be an absolute nightmare, due to both the age of the technology and the sheer scope of the project. I identified the project’s dependencies and then re-architected the system to create a fully supported platform. The net result avoided lost revenue by limiting system downtime.</p>
+
+              <p>At Modulus I worked with the Development and Ops teams to reduce the monthly AWS spend by 60% by identifying redundancies, misconfigurations and waste. With better accounting for our cloud provider spend we were able to extend the runway for the product.</p>
+
+              <p>I spent a year working with the Solutions Marketing team at Progress to address shortcomings for the Developer audience. This experience helped me to become more product focused and more prepared for bringing new products to market. </p>
             </Col>
           </Row>
         </Grid>
