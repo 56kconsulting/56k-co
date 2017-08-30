@@ -17,9 +17,8 @@ const Footer = styled.footer`
   & > .copyright {
       font-size: 14px;
       background-color: #ddd;
-
       & > .container > .row > .col-xs-12 > p {
-        padding: 10px;
+        padding-top: 10px;
       }
     }
   }

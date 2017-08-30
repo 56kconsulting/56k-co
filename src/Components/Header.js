@@ -13,6 +13,10 @@ const Header = styled.header`
   background-color: #ddd;
   height: 200px;
   padding: 20px;
+  h1 {
+    position: absolute;
+    top: 40%;
+  }
   & > .container > .row > .col-md-6 {
     height: 100%;
   }
