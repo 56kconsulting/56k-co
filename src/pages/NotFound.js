@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
-
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+import Page from '../Components/Page';
 
 class NotFound extends Component {
   render() {
     return (
-      <div className="App">
-        <Header greeting="Not Found!" />
-
-        <Footer copyright="&copy;2017 56 K Consulting, LLC" />
-      </div>
+      <Page pageName="404"></Page>
     );
   }
 }

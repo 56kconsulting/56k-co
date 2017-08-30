@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-
-import Header from '../Components/Header';
-import Section from '../Components/Section';
-import Footer from '../Components/Footer';
+import Page from '../Components/Page';
 
 class Services extends Component {
   render() {
     return (
-      <div className="App">
-        <Header greeting="Services!" />
-
-        <Section sectionName="Section Three">
+        <Page pageName="Services">
           <Grid>
             <Row>
               <Col xs={12} md={4} />
@@ -20,10 +14,7 @@ class Services extends Component {
               </Col>
             </Row>
           </Grid>
-        </Section>
-
-        <Footer />
-      </div>
+        </Page>
     );
   }
 }

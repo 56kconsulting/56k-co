@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { ListGroup, ListGroupItem, Grid, Row, Col } from 'react-bootstrap';
 
-import Header from '../Components/Header';
-import Section from '../Components/Section';
-import Footer from '../Components/Footer';
+import Page from '../Components/Page';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header greeting="About!" />
-
-        <Section sectionName="Section Two">
+        <Page pageName="About">
           <Grid>
             <Row>
               <Col xs={12} md={4}>
@@ -24,10 +19,7 @@ class App extends Component {
               </Col>
             </Row>
           </Grid>
-        </Section>
-
-        <Footer />
-      </div>
+        </Page>
     );
   }
 }

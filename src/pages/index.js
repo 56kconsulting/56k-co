@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from '../Components/Header';
-import Section from '../Components/Section';
+import Page from '../Components/Page';
 import Footer from '../Components/Footer';
 import Home from './Home';
 import About from './About';
@@ -12,7 +12,7 @@ export default class Pages extends Component {
   render() {
     return (
       <div >
-        <Header />
+        <Header greeting={"Hi, I'm Aaron"} />
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
