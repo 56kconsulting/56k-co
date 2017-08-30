@@ -11,7 +11,10 @@ class Home extends Component {
         <Grid>
           <Row>
             <Col xs={12} md={6}>
-              hi
+              One part engineering manager, one part public speaker, one part product manager, two parts sys admin.
+            </Col>
+            <Col xs={12} md={6}>
+              One part engineering manager, one part public speaker, one part product manager, two parts sys admin.
             </Col>
           </Row>
         </Grid>
