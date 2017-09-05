@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import FaTwitter from 'react-icons/lib/fa/twitter';
-import FaMedium from 'react-icons/lib/fa/medium';
-import FaLinkedin from 'react-icons/lib/fa/linkedin';
-import FaGithub from 'react-icons/lib/fa/github';
-import FaEnvelope from 'react-icons/lib/fa/envelope';
+import React from "react";
+import styled from "styled-components";
+import FaTwitter from "react-icons/lib/fa/twitter";
+import FaMedium from "react-icons/lib/fa/medium";
+import FaLinkedin from "react-icons/lib/fa/linkedin";
+import FaGithub from "react-icons/lib/fa/github";
+import FaEnvelope from "react-icons/lib/fa/envelope";
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from "react-bootstrap";
 
 const Footer = styled.footer`
   text-align: center;
@@ -16,7 +16,9 @@ const Footer = styled.footer`
     }
   & > .copyright {
       font-size: 14px;
-      background-color: #ddd;
+      background-color: #A1BEA5;
+      border-top: 1px solid #808080;
+      color: #D3FEDF;
       & > .container > .row > .col-xs-12 > p {
         padding-top: 10px;
       }
