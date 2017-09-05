@@ -13,8 +13,9 @@ export default class Pages extends Component {
   render() {
     return (
       <div>
-        <Header greeting={"Hi, I'm Aaron"} />
         <Navigation />
+        <Header />
+
         <div>
           <Switch>
             <Route exact path="/" component={Home} />

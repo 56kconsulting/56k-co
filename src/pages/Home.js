@@ -6,23 +6,17 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Grid>
-          <Row>
-            <Col xs={12}>
-              <p className="intro">
-                My story begins in the sweltering July of 1984. That's when I
-                came into this world, screaming about clouds and uptimes. After
-                spending the first few days of my life lecturing the doctors at
-                the hospital in the many ways they could make their workflows
-                more efficient, they were happy to have me leave the hospital.
-                "Good Luck!" they told my parents as they swaddled me into a
-                little Aaron burrito and packed me away into their car.
-              </p>
-            </Col>
-          </Row>
-        </Grid>
-        <Page pageName="">
+        <Page pageName="Hi, I'm Aaron Brongersma.">
           <Col xs={12}>
+            <p className="intro">
+              My story begins in the sweltering July of 1984. That's when I came
+              into this world, screaming about clouds and uptimes. After
+              spending the first few days of my life lecturing the doctors at
+              the hospital in the many ways they could make their workflows more
+              efficient, they were happy to have me leave the hospital. "Good
+              Luck!" they told my parents as they swaddled me into a little
+              Aaron burrito and packed me away into their car.
+            </p>
             <p>
               Fast forward to the new millenia and the only thing that has
               changed is the audience I have.

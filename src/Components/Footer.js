@@ -13,6 +13,7 @@ const Footer = styled.footer`
   & > .social {
       font-size: 18px;
       padding-bottom: 20px;
+      margin-top: 20px;
     }
   & > .copyright {
       font-size: 14px;

@@ -20,6 +20,8 @@ html, body {
 
 p {
   margin-bottom: 0;
+  color: #333;
+  line-height: 1.5em;
 }
 
 .container {
@@ -48,4 +50,10 @@ p {
   color: #5a5e5e;
   background: #eaeeee;
   border-color: #9a9999;
+}
+
+.intro::first-letter {
+  color: #a1bea5;
+  font-size: 20px;
+  text-shadow: 1px 1px #888;
 }

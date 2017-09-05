@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-bootstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Grid, Row, Col } from "react-bootstrap";
 
-import AaronBrongersma from '../assets/AaronBrongersma.jpg';
+import AaronBrongersma from "../assets/AaronBrongersma.jpg";
 
 const Header = styled.header`
   background-image: url(${AaronBrongersma});
@@ -21,35 +21,14 @@ const Header = styled.header`
     height: 100%;
   }
   @media (min-width: 480px) {
-		height: 300px;
-	}
+    height: 300px;
+  }
   @media (min-width: 768px) {
-		height: 400px;
-	}
+    height: 400px;
+  }
   @media (min-width: 1200px) {
-		height: 500px;
-	}
+    height: 500px;
+  }
 `;
 
-const HeaderContainer = props => {
-  return (
-    <Header>
-      <Grid>
-        <Row>
-          <Col xs={12}>
-            <h1>
-              {props.greeting}
-            </h1>
-          </Col>
-        </Row>
-
-      </Grid>
-    </Header>
-  );
-};
-
-HeaderContainer.propTypes = {
-  greeting: PropTypes.string.isRequired,
-};
-
-export default HeaderContainer;
+export default Header;
